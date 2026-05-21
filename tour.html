@@ -6,6 +6,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+  <!-- Favicon / logo tab browser -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <meta name="theme-color" content="#7b0000">
+
 		
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -96,7 +104,8 @@
 		<div id="tmp">
 			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
 			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
-		</div>
+		</div>
+
 
 		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
     		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
@@ -109,13 +118,16 @@
 			
             var container = document.querySelector( '#container' );
 			/*panolens*/
-var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
-/*panolens-end*/
+
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+
+/*panolens-end*/
 			
 			viewer.addUpdateCallback(function(){});
 			
 			/*panoramas*/
-var no1 = new PANOLENS.ImagePanorama( "panoramas/no1.jpg" );
+
+var no1 = new PANOLENS.ImagePanorama( "panoramas/no1.jpg" );
 			no1.addEventListener('progress', onProgress);
 			no1.addEventListener('load', function(e){
 				endLoading();
@@ -126,27 +138,41 @@
 			no1.addEventListener('click', function(e){
 			});
 
-var infospotno10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospotno10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno10.position.set( -1537.74, -804.54, -4687.49 );
 					no1.add(infospotno10);
-infospotno10.addEventListener('click', function(){
-showMedia(1, 'images/arcajokodolog.jpg');
-});
-var infospotno11 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno10.addEventListener('click', function(){
+
+showMedia(1, 'images/arcajokodolog.jpg');
+
+});
+
+var infospotno11 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno11.position.set( 746.26, -543.11, -4903.56 );
 					infospotno11.visible = false;
 					no1.add(infospotno11);
-infospotno11.addEventListener('click', function(){
-showMedia(1, 'images/information.png');
-});
-var infospotno12 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno11.addEventListener('click', function(){
+
+showMedia(1, 'images/information.png');
+
+});
+
+var infospotno12 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno12.position.set( 763.09, -1520.39, -4694.14 );
 					no1.add(infospotno12);
-infospotno12.addEventListener('click', function(){
-ChangePanorama('no2');
-});
-viewer.add( no1 );
-var no2 = new PANOLENS.ImagePanorama( "panoramas/no2.jpg" );
+
+infospotno12.addEventListener('click', function(){
+
+ChangePanorama('no2');
+
+});
+
+viewer.add( no1 );
+
+var no2 = new PANOLENS.ImagePanorama( "panoramas/no2.jpg" );
 			no2.addEventListener('progress', onProgress);
 			no2.addEventListener('load', function(e){
 				endLoading();
@@ -157,20 +183,30 @@
 			no2.addEventListener('click', function(e){
 			});
 
-var infospotno20 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno20 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno20.position.set( -229.58, -1020.04, -4879.10 );
 					no2.add(infospotno20);
-infospotno20.addEventListener('click', function(){
-ChangePanorama('no3');
-});
-var infospotno21 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno20.addEventListener('click', function(){
+
+ChangePanorama('no3');
+
+});
+
+var infospotno21 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno21.position.set( 280.94, -2164.48, 4488.93 );
 					no2.add(infospotno21);
-infospotno21.addEventListener('click', function(){
-ChangePanorama('no1');
-});
-viewer.add( no2 );
-var no3 = new PANOLENS.ImagePanorama( "panoramas/no3.jpg" );
+
+infospotno21.addEventListener('click', function(){
+
+ChangePanorama('no1');
+
+});
+
+viewer.add( no2 );
+
+var no3 = new PANOLENS.ImagePanorama( "panoramas/no3.jpg" );
 			no3.addEventListener('progress', onProgress);
 			no3.addEventListener('load', function(e){
 				endLoading();
@@ -181,32 +217,50 @@
 			no3.addEventListener('click', function(e){
 			});
 
-var infospotno30 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno30 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno30.position.set( 4079.78, -2764.07, 809.70 );
 					no3.add(infospotno30);
-infospotno30.addEventListener('click', function(){
-ChangePanorama('no4');
-});
-var infospotno31 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno30.addEventListener('click', function(){
+
+ChangePanorama('no4');
+
+});
+
+var infospotno31 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno31.position.set( -4041.30, -2921.76, -291.01 );
 					no3.add(infospotno31);
-infospotno31.addEventListener('click', function(){
-ChangePanorama('no2');
-});
-var infospotno32 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno31.addEventListener('click', function(){
+
+ChangePanorama('no2');
+
+});
+
+var infospotno32 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno32.position.set( 4584.96, -1941.21, -412.66 );
 					no3.add(infospotno32);
-infospotno32.addEventListener('click', function(){
-showMedia(1, 'images/dwarapaladepan.png');
-});
-var infospotno33 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno32.addEventListener('click', function(){
+
+showMedia(1, 'images/dwarapaladepan.png');
+
+});
+
+var infospotno33 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno33.position.set( 4270.45, -1868.98, 1793.21 );
 					no3.add(infospotno33);
-infospotno33.addEventListener('click', function(){
-showMedia(1, 'images/dwarapaladepan.png');
-});
-viewer.add( no3 );
-var no4 = new PANOLENS.ImagePanorama( "panoramas/no4.jpg" );
+
+infospotno33.addEventListener('click', function(){
+
+showMedia(1, 'images/dwarapaladepan.png');
+
+});
+
+viewer.add( no3 );
+
+var no4 = new PANOLENS.ImagePanorama( "panoramas/no4.jpg" );
 			no4.addEventListener('progress', onProgress);
 			no4.addEventListener('load', function(e){
 				endLoading();
@@ -217,26 +271,40 @@
 			no4.addEventListener('click', function(e){
 			});
 
-var infospotno40 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno40 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno40.position.set( 3928.14, -2989.28, 767.89 );
 					no4.add(infospotno40);
-infospotno40.addEventListener('click', function(){
-ChangePanorama('no5');
-});
-var infospotno41 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno40.addEventListener('click', function(){
+
+ChangePanorama('no5');
+
+});
+
+var infospotno41 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno41.position.set( -4489.22, -2194.16, -14.27 );
 					no4.add(infospotno41);
-infospotno41.addEventListener('click', function(){
-ChangePanorama('no3');
-});
-var infospotno42 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno41.addEventListener('click', function(){
+
+ChangePanorama('no3');
+
+});
+
+var infospotno42 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno42.position.set( 3887.85, -2138.01, 2293.34 );
 					no4.add(infospotno42);
-infospotno42.addEventListener('click', function(){
-showMedia(1, 'images/linggatapalbatasdepan.png');
-});
-viewer.add( no4 );
-var no5 = new PANOLENS.ImagePanorama( "panoramas/no5.jpg" );
+
+infospotno42.addEventListener('click', function(){
+
+showMedia(1, 'images/linggatapalbatasdepan.png');
+
+});
+
+viewer.add( no4 );
+
+var no5 = new PANOLENS.ImagePanorama( "panoramas/no5.jpg" );
 			no5.addEventListener('progress', onProgress);
 			no5.addEventListener('load', function(e){
 				endLoading();
@@ -247,32 +315,50 @@
 			no5.addEventListener('click', function(e){
 			});
 
-var infospotno50 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno50 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno50.position.set( 4043.87, -2728.74, 1057.52 );
 					no5.add(infospotno50);
-infospotno50.addEventListener('click', function(){
-ChangePanorama('no6');
-});
-var infospotno51 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno50.addEventListener('click', function(){
+
+ChangePanorama('no6');
+
+});
+
+var infospotno51 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno51.position.set( -4454.94, -2098.14, -817.85 );
 					no5.add(infospotno51);
-infospotno51.addEventListener('click', function(){
-ChangePanorama('no4');
-});
-var infospotno52 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno51.addEventListener('click', function(){
+
+ChangePanorama('no4');
+
+});
+
+var infospotno52 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno52.position.set( -4130.85, -1215.23, -2528.74 );
 					no5.add(infospotno52);
-infospotno52.addEventListener('click', function(){
-showMedia(1, 'images/ganesha1.png');
-});
-var infospotno53 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno52.addEventListener('click', function(){
+
+showMedia(1, 'images/ganesha1.png');
+
+});
+
+var infospotno53 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno53.position.set( -4742.82, -1145.73, 1075.05 );
 					no5.add(infospotno53);
-infospotno53.addEventListener('click', function(){
-showMedia(1, 'images/ganesha1.png');
-});
-viewer.add( no5 );
-var no6 = new PANOLENS.ImagePanorama( "panoramas/no6.jpg" );
+
+infospotno53.addEventListener('click', function(){
+
+showMedia(1, 'images/ganesha1.png');
+
+});
+
+viewer.add( no5 );
+
+var no6 = new PANOLENS.ImagePanorama( "panoramas/no6.jpg" );
 			no6.addEventListener('progress', onProgress);
 			no6.addEventListener('load', function(e){
 				endLoading();
@@ -283,38 +369,60 @@
 			no6.addEventListener('click', function(e){
 			});
 
-var infospotno60 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno60 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno60.position.set( 4356.53, -2271.13, 927.98 );
 					no6.add(infospotno60);
-infospotno60.addEventListener('click', function(){
-ChangePanorama('no7');
-});
-var infospotno61 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno60.addEventListener('click', function(){
+
+ChangePanorama('no7');
+
+});
+
+var infospotno61 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno61.position.set( -4211.78, -2592.34, -694.89 );
 					no6.add(infospotno61);
-infospotno61.addEventListener('click', function(){
-ChangePanorama('no5');
-});
-var infospotno62 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno61.addEventListener('click', function(){
+
+ChangePanorama('no5');
+
+});
+
+var infospotno62 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno62.position.set( 3193.64, -2362.65, -3024.78 );
 					no6.add(infospotno62);
-infospotno62.addEventListener('click', function(){
-showMedia(1, 'images/linggayoni.png');
-});
-var infospotno63 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno62.addEventListener('click', function(){
+
+showMedia(1, 'images/linggayoni.png');
+
+});
+
+var infospotno63 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno63.position.set( 1673.59, -1838.11, 4328.55 );
 					no6.add(infospotno63);
-infospotno63.addEventListener('click', function(){
-showMedia(1, 'images/linggayoni.png');
-});
-var infospotno64 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno63.addEventListener('click', function(){
+
+showMedia(1, 'images/linggayoni.png');
+
+});
+
+var infospotno64 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno64.position.set( 4515.49, -1917.72, -963.82 );
 					no6.add(infospotno64);
-infospotno64.addEventListener('click', function(){
-showMedia(1, 'images/nagaantaboga.png');
-});
-viewer.add( no6 );
-var no7 = new PANOLENS.ImagePanorama( "panoramas/no7.jpg" );
+
+infospotno64.addEventListener('click', function(){
+
+showMedia(1, 'images/nagaantaboga.png');
+
+});
+
+viewer.add( no6 );
+
+var no7 = new PANOLENS.ImagePanorama( "panoramas/no7.jpg" );
 			no7.addEventListener('progress', onProgress);
 			no7.addEventListener('load', function(e){
 				endLoading();
@@ -325,44 +433,70 @@
 			no7.addEventListener('click', function(e){
 			});
 
-var infospotno70 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+var infospotno70 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno70.position.set( 4256.28, -2407.63, 1007.19 );
 					no7.add(infospotno70);
-infospotno70.addEventListener('click', function(){
-ChangePanorama('no8');
-});
-var infospotno71 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno70.addEventListener('click', function(){
+
+ChangePanorama('no8');
+
+});
+
+var infospotno71 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno71.position.set( -4253.41, -2534.59, -638.51 );
 					no7.add(infospotno71);
-infospotno71.addEventListener('click', function(){
-ChangePanorama('no6');
-});
-var infospotno72 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno71.addEventListener('click', function(){
+
+ChangePanorama('no6');
+
+});
+
+var infospotno72 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno72.position.set( 4008.60, -1684.13, 2452.35 );
 					no7.add(infospotno72);
-infospotno72.addEventListener('click', function(){
-showMedia(1, 'images/dwarapala1.png');
-});
-var infospotno73 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno72.addEventListener('click', function(){
+
+showMedia(1, 'images/dwarapala1.png');
+
+});
+
+var infospotno73 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno73.position.set( 4626.42, -1782.72, -586.55 );
 					no7.add(infospotno73);
-infospotno73.addEventListener('click', function(){
-showMedia(1, 'images/dwarapala2.png');
-});
-var infospotno74 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno73.addEventListener('click', function(){
+
+showMedia(1, 'images/dwarapala2.png');
+
+});
+
+var infospotno74 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno74.position.set( 3472.75, -1026.01, 3433.19 );
 					no7.add(infospotno74);
-infospotno74.addEventListener('click', function(){
-showMedia(1, 'images/dewawisnu1.png');
-});
-var infospotno75 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno74.addEventListener('click', function(){
+
+showMedia(1, 'images/dewawisnu1.png');
+
+});
+
+var infospotno75 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno75.position.set( 3903.10, -2327.88, -2067.97 );
 					no7.add(infospotno75);
-infospotno75.addEventListener('click', function(){
-showMedia(1, 'images/IMG_0953.png');
-});
-viewer.add( no7 );
-var no8 = new PANOLENS.ImagePanorama( "panoramas/no8.jpg" );
+
+infospotno75.addEventListener('click', function(){
+
+showMedia(1, 'images/IMG_0953.png');
+
+});
+
+viewer.add( no7 );
+
+var no8 = new PANOLENS.ImagePanorama( "panoramas/no8.jpg" );
 			no8.addEventListener('progress', onProgress);
 			no8.addEventListener('load', function(e){
 				endLoading();
@@ -373,32 +507,50 @@
 			no8.addEventListener('click', function(e){
 			});
 
-var infospotno80 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospotno80 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno80.position.set( 4907.00, -200.41, 886.63 );
 					no8.add(infospotno80);
-infospotno80.addEventListener('click', function(){
-ChangePanorama('no9');
-});
-var infospotno81 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
+
+infospotno80.addEventListener('click', function(){
+
+ChangePanorama('no9');
+
+});
+
+var infospotno81 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
 					infospotno81.position.set( 4805.55, -1062.30, -828.76 );
 					no8.add(infospotno81);
-infospotno81.addEventListener('click', function(){
-ChangePanorama('no9kanan');
-});
-var infospotno82 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
+
+infospotno81.addEventListener('click', function(){
+
+ChangePanorama('no9kanan');
+
+});
+
+var infospotno82 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
 					infospotno82.position.set( 4333.92, -945.53, 2285.67 );
 					no8.add(infospotno82);
-infospotno82.addEventListener('click', function(){
-ChangePanorama('no9kiri');
-});
-var infospotno83 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno82.addEventListener('click', function(){
+
+ChangePanorama('no9kiri');
+
+});
+
+var infospotno83 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno83.position.set( -4300.95, -2368.12, -925.83 );
 					no8.add(infospotno83);
-infospotno83.addEventListener('click', function(){
-ChangePanorama('no7');
-});
-viewer.add( no8 );
-var no9 = new PANOLENS.ImagePanorama( "panoramas/no9.jpg" );
+
+infospotno83.addEventListener('click', function(){
+
+ChangePanorama('no7');
+
+});
+
+viewer.add( no8 );
+
+var no9 = new PANOLENS.ImagePanorama( "panoramas/no9.jpg" );
 			no9.addEventListener('progress', onProgress);
 			no9.addEventListener('load', function(e){
 				endLoading();
@@ -409,21 +561,31 @@
 			no9.addEventListener('click', function(e){
 			});
 
-var infospotno90 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospotno90 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno90.position.set( 4809.87, -771.28, 1108.83 );
 					infospotno90.visible = false;
 					no9.add(infospotno90);
-infospotno90.addEventListener('click', function(){
-showMedia(2, 'videos/IMG_0920.mp4');
-});
-var infospotno91 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
+
+infospotno90.addEventListener('click', function(){
+
+showMedia(2, 'videos/IMG_0920.mp4');
+
+});
+
+var infospotno91 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
 					infospotno91.position.set( -4324.27, -2307.96, -968.83 );
 					no9.add(infospotno91);
-infospotno91.addEventListener('click', function(){
-ChangePanorama('no8');
-});
-viewer.add( no9 );
-var no9kanan = new PANOLENS.ImagePanorama( "panoramas/no9kanan.jpg" );
+
+infospotno91.addEventListener('click', function(){
+
+ChangePanorama('no8');
+
+});
+
+viewer.add( no9 );
+
+var no9kanan = new PANOLENS.ImagePanorama( "panoramas/no9kanan.jpg" );
 			no9kanan.addEventListener('progress', onProgress);
 			no9kanan.addEventListener('load', function(e){
 				endLoading();
@@ -434,32 +596,50 @@
 			no9kanan.addEventListener('click', function(e){
 			});
 
-var infospotno9kanan0 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospotno9kanan0 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno9kanan0.position.set( 4584.42, -1788.44, 838.23 );
 					no9kanan.add(infospotno9kanan0);
-infospotno9kanan0.addEventListener('click', function(){
-showMedia(1, 'images/prasasti.png');
-});
-var infospotno9kanan1 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
+
+infospotno9kanan0.addEventListener('click', function(){
+
+showMedia(1, 'images/prasasti.png');
+
+});
+
+var infospotno9kanan1 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
 					infospotno9kanan1.position.set( 4306.87, -2318.37, -1011.26 );
 					no9kanan.add(infospotno9kanan1);
-infospotno9kanan1.addEventListener('click', function(){
-ChangePanorama('no9belakang');
-});
-var infospotno9kanan2 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
+
+infospotno9kanan1.addEventListener('click', function(){
+
+ChangePanorama('no9belakang');
+
+});
+
+var infospotno9kanan2 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
 					infospotno9kanan2.position.set( 3320.60, -2057.43, 3109.49 );
 					no9kanan.add(infospotno9kanan2);
-infospotno9kanan2.addEventListener('click', function(){
-ChangePanorama('no8');
-});
-var infospotno9kanan3 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno9kanan2.addEventListener('click', function(){
+
+ChangePanorama('no8');
+
+});
+
+var infospotno9kanan3 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno9kanan3.position.set( 3426.94, -2179.75, -2903.49 );
 					no9kanan.add(infospotno9kanan3);
-infospotno9kanan3.addEventListener('click', function(){
-showMedia(1, 'images/linggatapalbatas1.png');
-});
-viewer.add( no9kanan );
-var no9kiri = new PANOLENS.ImagePanorama( "panoramas/no9kiri.jpg" );
+
+infospotno9kanan3.addEventListener('click', function(){
+
+showMedia(1, 'images/linggatapalbatas1.png');
+
+});
+
+viewer.add( no9kanan );
+
+var no9kiri = new PANOLENS.ImagePanorama( "panoramas/no9kiri.jpg" );
 			no9kiri.addEventListener('progress', onProgress);
 			no9kiri.addEventListener('load', function(e){
 				endLoading();
@@ -470,26 +650,40 @@
 			no9kiri.addEventListener('click', function(e){
 			});
 
-var infospotno9kiri0 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
+
+var infospotno9kiri0 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
 					infospotno9kiri0.position.set( 3820.36, -2519.99, -1993.72 );
 					no9kiri.add(infospotno9kiri0);
-infospotno9kiri0.addEventListener('click', function(){
-ChangePanorama('no8');
-});
-var infospotno9kiri1 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
+
+infospotno9kiri0.addEventListener('click', function(){
+
+ChangePanorama('no8');
+
+});
+
+var infospotno9kiri1 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
 					infospotno9kiri1.position.set( 3282.39, -2533.15, 2782.11 );
 					no9kiri.add(infospotno9kiri1);
-infospotno9kiri1.addEventListener('click', function(){
-ChangePanorama('no9belakang');
-});
-var infospotno9kiri2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno9kiri1.addEventListener('click', function(){
+
+ChangePanorama('no9belakang');
+
+});
+
+var infospotno9kiri2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno9kiri2.position.set( 2000.82, -2129.86, 4046.06 );
 					no9kiri.add(infospotno9kiri2);
-infospotno9kiri2.addEventListener('click', function(){
-showMedia(1, 'images/linggatapalbatas1.png');
-});
-viewer.add( no9kiri );
-var no9belakang = new PANOLENS.ImagePanorama( "panoramas/no9belakang.jpg" );
+
+infospotno9kiri2.addEventListener('click', function(){
+
+showMedia(1, 'images/linggatapalbatas1.png');
+
+});
+
+viewer.add( no9kiri );
+
+var no9belakang = new PANOLENS.ImagePanorama( "panoramas/no9belakang.jpg" );
 			no9belakang.addEventListener('progress', onProgress);
 			no9belakang.addEventListener('load', function(e){
 				endLoading();
@@ -500,28 +694,43 @@
 			no9belakang.addEventListener('click', function(e){
 			});
 
-var infospotno9belakang0 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
+
+var infospotno9belakang0 = new PANOLENS.Infospot( 512, hotspotIcons[8].data, true );
 					infospotno9belakang0.position.set( 4910.37, -736.70, -556.99 );
 					no9belakang.add(infospotno9belakang0);
-infospotno9belakang0.addEventListener('click', function(){
-ChangePanorama('no9kiri');
-});
-var infospotno9belakang1 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
+
+infospotno9belakang0.addEventListener('click', function(){
+
+ChangePanorama('no9kiri');
+
+});
+
+var infospotno9belakang1 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
 					infospotno9belakang1.position.set( 4257.86, -563.26, 2545.92 );
 					no9belakang.add(infospotno9belakang1);
-infospotno9belakang1.addEventListener('click', function(){
-ChangePanorama('no9kanan');
-});
-var infospotno9belakang2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotno9belakang1.addEventListener('click', function(){
+
+ChangePanorama('no9kanan');
+
+});
+
+var infospotno9belakang2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotno9belakang2.position.set( 3771.65, -3108.19, 1016.76 );
 					no9belakang.add(infospotno9belakang2);
-infospotno9belakang2.addEventListener('click', function(){
-showMedia(1, 'images/prasasti.png');
-});
-viewer.add( no9belakang );
-$(document).ready(function(){ ChangePanorama('no1'); });
 
-/*panoramas-end*/
+infospotno9belakang2.addEventListener('click', function(){
+
+showMedia(1, 'images/prasasti.png');
+
+});
+
+viewer.add( no9belakang );
+
+$(document).ready(function(){ ChangePanorama('no1'); });
+
+
+/*panoramas-end*/
             
 			var stilloading = true;
 			function onProgress ( event ) {
@@ -700,11 +909,13 @@ if(viewer.panorama == no9belakang){
 			/*customjs*/
 function chclickinfospotno11(){ 
 showMedia(1, 'images/information.png');
-}
+
+}
 
 function chclickinfospotno90(){ 
 showMedia(2, 'videos/IMG_0920.mp4');
-}
+
+}
 /*customjs-end*/
         </script>
 	</body>
